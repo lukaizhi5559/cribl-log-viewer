@@ -1,0 +1,78 @@
+/* Filter container styling */
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color-dark);
+  padding: var(--padding-md);
+  border-radius: var(--border-radius-lg);
+  margin-bottom: var(--padding-lg);
+  width: auto;
+}
+
+.filter-container input,
+.filter-container select,
+.filter-container .react-datepicker__input-container input {
+  width: auto;
+  padding: var(--padding-sm) var(--padding-md);
+  margin: var(--padding-xs);
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius-sm);
+  font-size: 14px;
+}
+
+.filter-input {
+  margin-right: var(--padding-md);
+}
+
+/* Dropdown styling */
+.filter-dropdowns {
+  display: flex;
+  align-items: center;
+  gap: var(--padding-md);
+  width: 100%;
+}
+
+/* Datepicker styling */
+.datepicker-container {
+  display: flex;
+  gap: var(--padding-md);
+}
+
+.datepicker-container .react-datepicker-wrapper {
+  width: 150px;
+  position: relative;
+}
+
+.datepicker-container .react-datepicker__input-container input {
+  width: 100%;
+}
+
+/* Adjust datepicker popup positioning */
+.react-datepicker-popper {
+  z-index: 2;
+}
+
+.react-datepicker-wrapper {
+  overflow: hidden;
+}
+
+.react-datepicker-wrapper button {
+  right: var(--padding-xs);
+}
+
+.react-datepicker-wrapper button::after {
+  background-color: var(--background-color-dark);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filter-container {
+    flex-direction: column;
+  }
+
+  .filter-input,
+  .filter-dropdowns select,
+  .datepicker-container {
+    width: 100%;
+  }
+}
