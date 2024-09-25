@@ -83,17 +83,14 @@ const LogFilter: React.FC<FilterProps> = ({
           ))}
         </select>
 
-        <div>
-          <DatePicker
+        <DatePicker
             selected={startDate}
             onChange={(date: Date | null) => setStartDate(date)}
             placeholderText="Start Date"
             isClearable
             data-testid="start-date-picker"
           />
-        </div>
 
-        <div>
           <DatePicker
             selected={endDate}
             onChange={(date: Date | null) => setEndDate(date)}
@@ -101,7 +98,6 @@ const LogFilter: React.FC<FilterProps> = ({
             isClearable
             data-testid="end-date-picker"
           />
-        </div>
       </div>
     </div>
   );
