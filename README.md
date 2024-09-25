@@ -1,6 +1,3 @@
-Here’s the updated README file based on the tree structure and additional details you’ve provided:
-
----
 
 # Cribl Log Viewer
 
