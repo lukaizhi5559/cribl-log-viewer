@@ -1,9 +1,8 @@
 
 # Cribl Log Viewer
+A React application for viewing and filtering logs with advanced filtering options and a visual timeline chart. This app fetches logs from a provided URL, displays them in a table, and provides several filtering mechanisms, including search term, CID, channel, log level, and date range. The application is optimized with lazy loading, debounce handling, and efficient data fetching using custom React hooks.
 
 ![App Screenshot](./public/cribl-screenshot.png)
-
-A React application for viewing and filtering logs with advanced filtering options and a visual timeline chart. This app fetches logs from a provided URL, displays them in a table, and provides several filtering mechanisms, including search term, CID, channel, log level, and date range. The application is optimized with lazy loading, debounce handling, and efficient data fetching using custom React hooks.
 
 ## Features
 
