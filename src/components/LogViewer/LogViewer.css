@@ -1,0 +1,139 @@
+/* Make the log viewer take full height and handle overflow */
+.log-viewer-container {
+  max-height: 500px;
+  overflow-y: auto;
+  width: 100%;
+  border: 1px solid var(--text-color-dark);
+  border-radius: var(--border-radius-sm);
+}
+
+/* Ensure the table fills the container */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+thead th {
+  position: sticky;
+  top: 0;
+  color: var(--text-color-light);
+  background-color: var(--background-color-dark);
+  z-index: 1;
+  padding: var(--padding-md);
+}
+
+th, td {
+  padding: var(--padding-md);
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  width: 2ch; /* Auto-width based on content */
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 15ch; /* Auto-width based on content */
+}
+
+td:nth-child(3) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 1fr; /* Ensure column shrinks correctly */
+}
+
+tbody tr:hover {
+  background-color: #e5ffff;
+}
+
+tbody tr.active {
+  color: var(--text-color-light);
+  background-color: var(--background-color-accent);
+}
+
+.log-caret {
+  cursor: pointer;
+  width: 30px;
+  text-align: center;
+  color: var(--text-color-accent);
+}
+
+.log-caret.active {
+  color: var(--text-color-light);
+}
+
+.log-expanded {
+  background-color: #e5ffff;
+  padding: var(--padding-md);
+  white-space: pre-wrap; /* Allow line breaks inside preformatted text */
+}
+
+/* Preloader container */
+.preloader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+  padding: var(--padding-lg);
+}
+
+/* Loading spinner */
+.spinner {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: var(--background-color-accent);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+  margin-bottom: var(--padding-md);
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Pre-formatted expanded log content */
+pre {
+  white-space: pre-wrap;
+  word-break: break-word;
+  max-width: 100%;
+}
+
+.scroll-to-top-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #00cccc;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 50%;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: opacity 0.3s;
+}
+
+.scroll-to-top-button:hover {
+  background-color: #00aaaa;
+}
+
+.scroll-to-top-button:active {
+  background-color: #008888;
+}
