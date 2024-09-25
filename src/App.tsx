@@ -1,6 +1,7 @@
 import React from "react";
 import CriblLogo from "./components/CriblLogo";
 import LogViewer from "./components/LogViewer";
+import Timeline from "./components/Timeline";
 import useFetchLogs from "./hooks/useFetchLogs";
 import "./App.css";
 
@@ -15,13 +16,17 @@ const App: React.FC = () => {
       <header className="header">
         <CriblLogo />
         <span>Log Viewer</span>
+      </header>
 
-        {error && <div className="error">{error}</div>}
+      {error && <div className="error">{error}</div>}
 
-        <section className="log-viewer">
+      <section className="timeline">
+        <Timeline logEntries={logEntries} />
+      </section>
+
+      <section className="log-viewer">       
         <LogViewer loading={loading} logEntries={logEntries} />
       </section>
-      </header>
     </div>
   );
 };

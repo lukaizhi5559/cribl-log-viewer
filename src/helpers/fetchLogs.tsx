@@ -15,30 +15,33 @@ export const fetchLogs = async (
   let batch: any[] = []; 
   const batchSize = 100;
 
+  const processLogs = (logs: string[]) => {
+    logs.forEach((log, index) => {
+      try {
+        if (log.trim()) {
+          const logEntry = JSON.parse(log);
+          batch.push(logEntry);
+
+          // Once we have enough logs, update the state and reset the batch
+          if (batch.length >= batchSize) {
+            setLogEntries((prevLogs) => [...prevLogs, ...batch]);
+            batch = []; // Reset the batch after adding to state
+          }
+        }
+      } catch (e) {
+        // Handle incomplete log entry or parse error
+        accumulatedText = logs.slice(index).join("\n");
+      }
+    });
+  };
+
   while (!done) {
     const { value, done: readerDone } = await reader.read();
 
     if (value) {
       accumulatedText += decoder.decode(value, { stream: true });
       const logs = accumulatedText.split("\n");
-
-      logs.forEach((log, index) => {
-        try {
-          if (log.trim()) {
-            const logEntry = JSON.parse(log);
-            batch.push(logEntry); 
-
-            // Once we have enough logs, update the state and reset the batch
-            if (batch.length >= batchSize) {
-              setLogEntries((prevLogs) => [...prevLogs, ...batch]);
-              batch = []; // Reset the batch after adding to state
-            }
-          }
-        } catch (e) {
-          // Handle incomplete log entry or parse error
-          accumulatedText = logs.slice(index).join("\n");
-        }
-      });
+      processLogs(logs); // Process logs outside of the loop
     }
 
     done = readerDone;
