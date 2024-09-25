@@ -1,9 +1,9 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
+import { render } from '@testing-library/react';
+import '@testing-library/jest-dom';  // For Jest DOM matchers
 import App from './App';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
+test('renders App with Cribl logo', () => {
+  const { getByText } = render(<App />);
+  const linkElement = getByText(/Log Viewer/i);
   expect(linkElement).toBeInTheDocument();
 });

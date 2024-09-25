@@ -1,0 +1,6 @@
+/* Ensure the SVG takes up 100% of its container width and maintains aspect ratio */
+.cribl-logo {
+    height: 48px; /* Maintain aspect ratio */
+    display: block; /* Prevents the SVG from overflowing inline elements */
+}
+  
