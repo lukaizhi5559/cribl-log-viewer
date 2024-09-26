@@ -50,7 +50,7 @@ td:nth-child(3) {
 }
 
 tbody tr:hover {
-  background-color: #e5ffff;
+  background-color: var(--background-color-light);
 }
 
 tbody tr.active {
@@ -70,7 +70,7 @@ tbody tr.active {
 }
 
 .log-expanded {
-  background-color: #e5ffff;
+  background-color: var(--background-color-light);
   padding: var(--padding-md);
   white-space: pre-wrap; /* Allow line breaks inside preformatted text */
 }
@@ -82,7 +82,6 @@ tbody tr.active {
   justify-content: center;
   align-items: center;
   height: 100%;
-  width: 100%;
   text-align: center;
   padding: var(--padding-lg);
 }
@@ -119,7 +118,7 @@ pre {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  background-color: #00cccc;
+  background-color: var(--background-color-accent);
   color: white;
   border: none;
   padding: 10px 15px;
@@ -131,9 +130,9 @@ pre {
 }
 
 .scroll-to-top-button:hover {
-  background-color: #00aaaa;
+  background-color: var(--background-color-accent-hover);
 }
 
 .scroll-to-top-button:active {
-  background-color: #008888;
+  background-color: var(--background-color-accent-active);
 }

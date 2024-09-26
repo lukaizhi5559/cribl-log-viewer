@@ -5,6 +5,9 @@
   --padding-xs: 5px;
   --background-color-dark: #263446;
   --background-color-accent: #00cccc;
+  --background-color-accent-hover: #00aaaa;
+  --background-color-accent-active: #008888;
+  --background-color-light: #e5ffff;
   --text-color-light: #ffffff;
   --text-color-dark: #263446;
   --text-color-accent: #00cccc;
