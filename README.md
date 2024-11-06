@@ -4,6 +4,9 @@ A React application for viewing and filtering logs with advanced filtering optio
 
 ![App Screenshot](./public/cribl-screenshot.png)
 
+## Demo
+![view live demo](https://cribl-log-viewer.vercel.app/)
+
 ## Features
 
 - **Log Fetching**: Fetches log data from a specified URL.
